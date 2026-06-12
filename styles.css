@@ -475,6 +475,12 @@ pre {
   font-weight: 800;
 }
 
+.encoded-contact,
+code {
+  font-family: var(--mono);
+  font-weight: 800;
+}
+
 .game-panel {
   padding: 16px;
   background: #233027;
