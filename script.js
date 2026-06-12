@@ -46,6 +46,7 @@ function randomItem(items) {
 
 function showToast(message) {
   const toast = document.querySelector("[data-toast]");
+  if (!toast) return;
   toast.textContent = message;
   toast.hidden = false;
   clearTimeout(toastTimer);
@@ -59,6 +60,8 @@ function buildBlocks() {
   const scoreNode = document.querySelector("[data-score]");
   const pickaxeNode = document.querySelector("[data-pickaxe]");
   const messageNode = document.querySelector("[data-game-message]");
+
+  if (!grid || !scoreNode || !pickaxeNode || !messageNode) return;
 
   blockTypes.forEach((type, index) => {
     const block = document.createElement("button");
@@ -81,14 +84,17 @@ function buildBlocks() {
 }
 
 function wireButtons() {
-  document.querySelector("[data-chaos-button]").addEventListener("click", () => {
+  const chaosButton = document.querySelector("[data-chaos-button]");
+  const finishButton = document.querySelector("[data-finish-button]");
+
+  if (chaosButton) chaosButton.addEventListener("click", () => {
     document.body.classList.toggle("chaos-mode");
     showToast(document.body.classList.contains("chaos-mode")
       ? "Chaos deployed. Rollback unavailable until coffee."
       : "Chaos paused. Logs still suspicious.");
   });
 
-  document.querySelector("[data-finish-button]").addEventListener("click", () => {
+  if (finishButton) finishButton.addEventListener("click", () => {
     showToast("Website completion failed: task depends on \"one more feature\".");
   });
 }
@@ -111,7 +117,8 @@ function wireKonami() {
   });
 }
 
-document.querySelector("[data-year]").textContent = new Date().getFullYear();
+const yearNode = document.querySelector("[data-year]");
+if (yearNode) yearNode.textContent = new Date().getFullYear();
 buildBlocks();
 wireButtons();
 wireKonami();

@@ -318,6 +318,7 @@ pre {
 }
 
 .section-grid,
+.discord-bots,
 .minecraft,
 .logs {
   display: grid;
@@ -356,10 +357,122 @@ pre {
 }
 
 .card p,
+.discord-bots p,
 .minecraft-copy p,
 .timeline p {
   color: var(--muted);
   line-height: 1.6;
+}
+
+.bot-list {
+  display: grid;
+  gap: 16px;
+}
+
+.bot-card {
+  min-height: 280px;
+  padding: 24px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: 0 12px 30px rgba(23, 33, 28, 0.07);
+}
+
+.bot-card-header {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 16px;
+  align-items: start;
+}
+
+.bot-card-header p {
+  margin: 8px 0 0;
+}
+
+.bot-badge {
+  display: grid;
+  width: 52px;
+  height: 52px;
+  place-items: center;
+  color: #fff;
+  background: var(--blue);
+  border: 2px solid var(--ink);
+  border-radius: 8px;
+  box-shadow: 4px 4px 0 var(--yellow);
+  font-family: var(--mono);
+  font-weight: 900;
+}
+
+.bot-facts {
+  display: grid;
+  gap: 10px;
+  margin: 22px 0 0;
+}
+
+.bot-facts div {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 12px;
+  padding: 12px 0;
+  border-top: 1px solid var(--line);
+}
+
+.bot-facts dt {
+  color: var(--green-dark);
+  font-family: var(--mono);
+  font-weight: 850;
+}
+
+.bot-facts dd {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.bot-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.compact {
+  min-height: 40px;
+  padding: 10px 14px;
+  font-size: 0.94rem;
+}
+
+.policy-page {
+  padding: 64px 0 86px;
+}
+
+.policy-document {
+  max-width: 860px;
+}
+
+.policy-document h1 {
+  max-width: 14ch;
+  font-size: clamp(2.8rem, 7vw, 5.4rem);
+}
+
+.policy-document h2 {
+  max-width: none;
+  margin-top: 44px;
+  font-size: clamp(1.55rem, 3vw, 2.25rem);
+}
+
+.policy-document p {
+  max-width: 76ch;
+  color: #39453d;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.policy-updated {
+  margin: 22px 0 34px;
+  color: var(--green-dark);
+  font-family: var(--mono);
+  font-weight: 800;
 }
 
 .game-panel {
@@ -525,6 +638,7 @@ pre {
 @media (max-width: 900px) {
   .topbar,
   .section-grid,
+  .discord-bots,
   .minecraft,
   .logs {
     grid-template-columns: 1fr;
@@ -597,6 +711,11 @@ pre {
 
   .block-grid {
     grid-template-columns: repeat(6, minmax(28px, 1fr));
+  }
+
+  .bot-card-header,
+  .bot-facts div {
+    grid-template-columns: 1fr;
   }
 }
 
