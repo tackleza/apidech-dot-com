@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="The personal landing page of Apidech Tearpaiboon. Software, AI, cats, Minecraft, and one suspiciously permanent under-construction sign.">
+    <title>Apidech Tearpaiboon | apidech.com</title>
+    <link rel="preload" href="assets/apidech-cat-server.png" as="image">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="topbar" aria-label="Site header">
+        <a class="brand" href="#top" aria-label="apidech.com home">
+          <span class="brand-mark" aria-hidden="true">A</span>
+          <span>apidech.com</span>
+        </a>
+        <nav class="nav" aria-label="Primary navigation">
+          <a href="#projects">Projects</a>
+          <a href="#minecraft">Minecraft</a>
+          <a href="#logs">Logs</a>
+          <a href="https://www.youtube.com/user/tackle4826" target="_blank" rel="noreferrer">YouTube</a>
+        </nav>
+      </header>
+
+      <main id="top">
+        <section class="hero" aria-labelledby="hero-title">
+          <div class="hero-copy">
+            <p class="eyebrow">Personal site. Backend server? Never heard of it.</p>
+            <h1 id="hero-title">Apidech</h1>
+            <p class="intro">
+              Apidech Tearpaiboon is a software developer, AI enjoyer, cat fan, Java survivor, and public defender of the obviously correct opinion:
+              <strong>PHP is the best.</strong>
+            </p>
+            <div class="hero-actions" aria-label="Hero actions">
+              <a class="button primary" href="https://www.youtube.com/user/tackle4826" target="_blank" rel="noreferrer">Watch Tackle4826</a>
+              <button class="button ghost" type="button" data-chaos-button>Deploy chaos</button>
+            </div>
+            <div class="status-line" role="status">
+              <span class="pulse" aria-hidden="true"></span>
+              Under construction since approximately forever. Estimated finish: after Minecraft loads.
+            </div>
+          </div>
+
+          <div class="hero-visual" aria-label="Cat developer mascot beside an old server">
+            <img src="assets/apidech-cat-server.png" alt="Pixel-art cat developer with a server, code props, and Minecraft blocks">
+            <div class="terminal-card" aria-label="Fake terminal status">
+              <div class="terminal-header">
+                <span></span><span></span><span></span>
+              </div>
+              <pre><code>$ curl apidech.com/status
+200 OK
+site: "under construction"
+eta: "lol"
+php: "best"
+cat: "approved"</code></pre>
+            </div>
+          </div>
+        </section>
+
+        <section class="notice-band" aria-label="Construction notice">
+          <span>🚧</span>
+          <p>This website is under construction, but in a spiritually permanent way.</p>
+          <button class="tiny-button" type="button" data-finish-button>Finish website</button>
+        </section>
+
+        <section class="section-grid" id="projects" aria-labelledby="projects-title">
+          <div>
+            <p class="eyebrow">What lives here</p>
+            <h2 id="projects-title">Probably projects. Definitely jokes.</h2>
+          </div>
+          <div class="cards">
+            <article class="card">
+              <span class="card-icon" aria-hidden="true">☕</span>
+              <h3>Java Things</h3>
+              <p>CLI toys, terminal experiments, build files, and very serious semicolon appreciation.</p>
+            </article>
+            <article class="card">
+              <span class="card-icon" aria-hidden="true">🐘</span>
+              <h3>PHP Forever</h3>
+              <p>A carefully maintained museum of questionable decisions and surprisingly useful scripts.</p>
+            </article>
+            <article class="card">
+              <span class="card-icon" aria-hidden="true">✨</span>
+              <h3>AI Experiments</h3>
+              <p>Small agents, prompts, workflow helpers, and notes from trying to make computers behave.</p>
+            </article>
+            <article class="card">
+              <span class="card-icon" aria-hidden="true">🐈</span>
+              <h3>Cat Operations</h3>
+              <p>Production-grade loaf monitoring. Uptime depends on snack availability.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="minecraft" id="minecraft" aria-labelledby="minecraft-title">
+          <div class="minecraft-copy">
+            <p class="eyebrow">Minecraft session</p>
+            <h2 id="minecraft-title">Tiny block break room</h2>
+            <p>
+              Click blocks to mine them. Hidden blocks may reveal suspicious server facts, fake diamonds, or absolutely nothing.
+            </p>
+          </div>
+          <div class="game-panel">
+            <div class="game-stats" aria-live="polite">
+              <span>Pickaxe: <strong data-pickaxe>wood</strong></span>
+              <span>Blocks mined: <strong data-score>0</strong></span>
+            </div>
+            <div class="block-grid" data-block-grid aria-label="Clickable Minecraft-style block grid"></div>
+            <p class="game-message" data-game-message>Tip: PHP ore is rare and extremely powerful.</p>
+          </div>
+        </section>
+
+        <section class="logs" id="logs" aria-labelledby="logs-title">
+          <div>
+            <p class="eyebrow">Build log</p>
+            <h2 id="logs-title">Latest totally real updates</h2>
+          </div>
+          <ol class="timeline">
+            <li>
+              <time datetime="2026-06-02">2026-06-02</time>
+              <p>Added a landing page so the domain looks busy while the backend keeps a fake mustache on.</p>
+            </li>
+            <li>
+              <time datetime="2025-12-24">2025-12-24</time>
+              <p>Rewrote everything in PHP, then rewrote it in Java, then missed PHP.</p>
+            </li>
+            <li>
+              <time datetime="2012-08-17">2012-08-17</time>
+              <p>Started the website. Estimated completion was optimistic by several geological periods.</p>
+            </li>
+          </ol>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <span>© <span data-year></span> Apidech Tearpaiboon</span>
+        <span>Konami code friendly. Cat approved. Static-host ready.</span>
+      </footer>
+    </div>
+
+    <div class="toast" data-toast hidden></div>
+    <script src="script.js"></script>
+  </body>
+</html>
