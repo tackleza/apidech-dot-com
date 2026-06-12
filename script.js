@@ -39,6 +39,18 @@ let score = 0;
 let toastTimer;
 const konami = ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight", "b", "a"];
 const entered = [];
+const updateMessages = [
+  "Added a landing page so the domain looks busy while the backend keeps a fake mustache on.",
+  "Moved one pixel three times and called it a full redesign sprint.",
+  "Replaced the roadmap with a sticky note that says maybe later.",
+  "Asked the server for a status update and it replied with Minecraft cave noises.",
+  "Polished the under-construction sign until it became the main feature.",
+  "Shipped a new joke to production because the real features are still loading.",
+  "Upgraded the website from nothing to technically something.",
+  "Added more personality than functionality, which feels on brand.",
+  "Pretended to optimize performance by staring intensely at the CSS.",
+  "Confirmed the backend exists spiritually, but not in any useful network sense."
+];
 
 function randomItem(items) {
   return items[Math.floor(Math.random() * items.length)];
@@ -119,6 +131,23 @@ function wireKonami() {
 
 const yearNode = document.querySelector("[data-year]");
 if (yearNode) yearNode.textContent = new Date().getFullYear();
+
+const currentDateNode = document.querySelector("[data-current-date]");
+if (currentDateNode) {
+  const today = new Date();
+  const currentDate = [
+    today.getFullYear(),
+    String(today.getMonth() + 1).padStart(2, "0"),
+    String(today.getDate()).padStart(2, "0")
+  ].join("-");
+
+  currentDateNode.dateTime = currentDate;
+  currentDateNode.textContent = currentDate;
+}
+
+const updateMessageNode = document.querySelector("[data-random-update-message]");
+if (updateMessageNode) updateMessageNode.textContent = randomItem(updateMessages);
+
 buildBlocks();
 wireButtons();
 wireKonami();
